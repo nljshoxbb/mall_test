@@ -28,3 +28,5 @@ target/
 *.cache
 *.patch
 *.temp
+
+/logback/logs/mmall.log
