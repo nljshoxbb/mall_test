@@ -74,6 +74,9 @@ public class CloseOrderTask {
                 // 返回的给定的key的旧值-》旧值判断，是否可以获取锁
                 // 当key没有旧值时，即key不存在时，返回nil -》获取锁
                 // set一个新的value,获取旧的值
+
+                // getSetResult == null 表示锁已经被删除
+                //getSetResult !=null && StringUtils.equals(lockValueStr,getSetResult) 表示获得的锁并没有被刷新，可以进行下一步操作
                 if (getSetResult == null || (getSetResult !=null && StringUtils.equals(lockValueStr,getSetResult))){
                     // 真正获取到锁
                     closeOrder(Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK);
