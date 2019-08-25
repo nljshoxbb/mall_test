@@ -46,12 +46,12 @@ public class RedisShardedPool {
         config.setBlockWhenExhausted(true);
 
         JedisShardInfo info1 = new JedisShardInfo(redisIp1,redisPort1,1000*2);
-        JedisShardInfo info2 = new JedisShardInfo(redisIp2,redisPort2,1000*2);
+//        JedisShardInfo info2 = new JedisShardInfo(redisIp2,redisPort2,1000*2);
 
         List<JedisShardInfo> jedisShardInfoList = new ArrayList<JedisShardInfo>(2);
 
         jedisShardInfoList.add(info1);
-        jedisShardInfoList.add(info2);
+//        jedisShardInfoList.add(info2);
 
         pool = new ShardedJedisPool(config,jedisShardInfoList, Hashing.MURMUR_HASH, Sharded.DEFAULT_KEY_TAG_PATTERN);
     }
