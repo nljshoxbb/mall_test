@@ -23,12 +23,8 @@ public class RedisShardedPool {
     private static Boolean testOnReturn = Boolean.parseBoolean(PropertiesUtil.getProperty("redis.max.return", "20"));
 
     private static String redisIp1 = PropertiesUtil.getProperty("redis1.ip");
-
     private static Integer redisPort1 = Integer.parseInt(PropertiesUtil.getProperty("redis1.port"));
-
-
     private static String redisIp2 = PropertiesUtil.getProperty("redis2.ip");
-
     private static Integer redisPort2 = Integer.parseInt(PropertiesUtil.getProperty("redis2.port"));
 
 
